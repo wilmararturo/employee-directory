@@ -1,7 +1,12 @@
 import React from "react";
 
 function App() {
-  return <div> Employee Directory </div>;
+  return (
+    <div className="jumbotron">
+      {" "}
+      <span>Employee Directory</span>{" "}
+    </div>
+  );
 }
 
 export default App;
