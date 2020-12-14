@@ -25,7 +25,7 @@ An employee directory?
 
 ---
 
-Navigate to [employee-directory]().
+Navigate to [employee-directory](https://stark-lowlands-32632.herokuapp.com/).
 
 ## Tests
 
