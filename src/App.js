@@ -17,8 +17,8 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/search" component={Search} />
         </Wrapper>
+        <Footer />
       </div>
-      <Footer />
     </Router>
   );
 }
