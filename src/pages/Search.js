@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 //import EmployeeContext from "../utils/EmployeeContext";
+import Col from "../components/Col";
 import Hero from "../components/Hero";
 import Table from "../components/Table";
+import SearchBar from "../components/SearchBar";
 
 //create three states: employee, filtered, searchString
 
@@ -48,6 +50,9 @@ function Search() {
       <Hero>
         <h1 className="display-4">Employee Directory</h1>
       </Hero>
+      <Col size="md-4">
+        <SearchBar />
+      </Col>
       <Table employeeList={filtered} />
     </div>
   );
