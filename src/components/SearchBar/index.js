@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchBar({ handleInputChange, handleFormSubmit, name, value }) {
+function SearchBar({ handleInputChange, name, value }) {
   return (
     <form className="search">
       <div className="form-group">
@@ -11,14 +11,9 @@ function SearchBar({ handleInputChange, handleFormSubmit, name, value }) {
           name={name}
           type="text"
           className="form-control"
-          placeholder="Type in a search term to begin"
+          placeholder="Type here to search by name"
           id="term"
         />
-        <button
-          onClick={handleFormSubmit}
-          type="submit"
-          className="btn btn-lg float-right"
-        ></button>
       </div>
     </form>
   );

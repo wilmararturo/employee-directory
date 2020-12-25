@@ -17,6 +17,7 @@ function Search() {
     if (employees.length === 0) {
       loadEmployees();
     } else if (employees.length !== 0) {
+      console.log(filtered);
       filterEmployees();
     }
   }, [searchString, employees]);
@@ -42,7 +43,7 @@ function Search() {
     if (searchString.length !== 0) {
       const re = searchString.toLowerCase();
       console.log(re);
-      const newArray = filtered.filter((item) => {
+      const newArray = employees.filter((item) => {
         const fullName = `${item.name.first.toLowerCase()} ${item.name.last.toLowerCase()}`;
         if (fullName.match(re)) {
           console.log(item.name.first);
