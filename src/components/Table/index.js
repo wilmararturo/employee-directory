@@ -1,6 +1,6 @@
 import React from "react";
 
-function Table(props) {
+function Table({ employeeList, onClick }) {
   return (
     <div className="table-responsive-md" id="employeeTableContainer">
       <table className="table table-striped">
@@ -8,14 +8,16 @@ function Table(props) {
         <thead className="thead-dark">
           <tr>
             <th scope="col">Image</th>
-            <th scope="col">Name</th>
+            <th scope="col" onClick={onClick} data-value="name">
+              Name
+            </th>
             <th scope="col">Phone</th>
             <th scope="col">Email</th>
             <th scope="col">Date of Birth</th>
           </tr>
         </thead>
         <tbody>
-          {props.employeeList.map((item, index) => (
+          {employeeList.map((item, index) => (
             <tr key={index}>
               <td>
                 <img alt={item.email} src={item.picture.thumbnail} />

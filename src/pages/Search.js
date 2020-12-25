@@ -58,6 +58,10 @@ function Search() {
     }
   }
 
+  function sortEmployees() {
+    console.log(filtered);
+  }
+
   const handleInputChange = (event) => {
     event.preventDefault();
     const { value } = event.target;
@@ -65,11 +69,19 @@ function Search() {
     setSearchString(value);
   };
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    const { value } = event.target;
-    console.log(value);
-    //setSearchString(value);
+  const handleTableHeaderClick = (event) => {
+    console.log("table header click", event.target);
+    filtered.sort((a, b) => {
+      const aName = `${a.name.first.toLowerCase()} ${a.name.last.toLowerCase()}`;
+      const bName = `${b.name.first.toLowerCase()} ${b.name.last.toLowerCase()}`;
+      if (aName < bName) {
+        return -1;
+      }
+      if (aName < bName) {
+        return 1;
+      }
+      return 0;
+    });
   };
 
   return (
@@ -80,13 +92,11 @@ function Search() {
       <Col size="md-4">
         <SearchBar
           handleInputChange={handleInputChange}
-          handleFormSubmit={handleFormSubmit}
-          onClick={handleFormSubmit}
           name="search"
           value={searchString}
         />
       </Col>
-      <Table employeeList={filtered} />
+      <Table employeeList={filtered} onClick={handleTableHeaderClick} />
     </div>
   );
 }
