@@ -13,6 +13,7 @@ function Search() {
   const [searchString, setSearchString] = useState("");
 
   useEffect(() => {
+    console.log("Using Effect...");
     if (employees.length === 0) {
       loadEmployees();
     } else if (employees.length !== 0) {
@@ -37,26 +38,30 @@ function Search() {
 
   function filterEmployees() {
     console.log("filter employees");
-    console.log(searchString);
+    console.log(searchString, searchString.length);
     if (searchString.length !== 0) {
-      const re = `/${searchString}/i`;
+      const re = searchString.toLowerCase();
+      console.log(re);
       const newArray = filtered.filter((item) => {
-        if (item.name.first.match(re) || item.name.last.match(re)) {
+        const fullName = `${item.name.first.toLowerCase()} ${item.name.last.toLowerCase()}`;
+        if (fullName.match(re)) {
+          console.log(item.name.first);
           return true;
         }
         return false;
       });
       setFiltered(newArray);
-      console.log(newArray);
+      console.log(filtered);
     } else {
       setFiltered(employees);
     }
   }
 
   const handleInputChange = (event) => {
+    event.preventDefault();
     const { value } = event.target;
     console.log(value);
-    //setSearchString(value);
+    setSearchString(value);
   };
 
   const handleFormSubmit = (event) => {
