@@ -27,7 +27,7 @@ function Table({ employeeList, onClick }) {
               </td>
               <td>{item.phone}</td>
               <td>{item.email}</td>
-              <td>{item.dob.date}</td>
+              <td>{new Date(item.dob.date).toLocaleDateString("en-US")}</td>
             </tr>
           ))}
         </tbody>
