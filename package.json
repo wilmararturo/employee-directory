@@ -2,7 +2,7 @@
   "name": "employee-directory",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wilmararturo.github.io/employee-directory",
+  "homepage": "https://wilmararturo.github.io/employee-directory/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -28,6 +28,12 @@
     "test": "react-scripts test || exit 0",
     "eject": "react-scripts eject"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:wilmararturo/employee-directory.git"
+  },
+  "author": "Wilmar Stephens",
+  "license": "MIT",
   "eslintConfig": {
     "extends": [
       "react-app",
