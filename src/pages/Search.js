@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-//import EmployeeContext from "../utils/EmployeeContext";
 import Col from "../components/Col";
 import Hero from "../components/Hero";
 import Table from "../components/Table";
@@ -11,6 +10,7 @@ function Search() {
   const [employees, setEmployees] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [searchString, setSearchString] = useState("");
+  const [nameOrder, setNameOrder] = useState("asc");
 
   useEffect(() => {
     console.log("Using Effect...");
@@ -59,6 +59,38 @@ function Search() {
   }
 
   function sortEmployees() {
+    if (nameOrder === "asc") {
+      const newArray = filtered.sort((a, b) => {
+        const alpha = `${a.name.first.toLowerCase()} ${a.name.last.toLowerCase()}`;
+        const beta = `${b.name.first.toLowerCase()} ${b.name.last.toLowerCase()}`;
+        if (alpha < beta) {
+          return -1;
+        }
+        if (alpha > beta) {
+          return 1;
+        }
+        return 0;
+      });
+      setFiltered(newArray);
+      setNameOrder("desc");
+      return;
+    }
+    if (nameOrder === "desc") {
+      const newArray = filtered.sort((a, b) => {
+        const alpha = `${a.name.first.toLowerCase()} ${a.name.last.toLowerCase()}`;
+        const beta = `${b.name.first.toLowerCase()} ${b.name.last.toLowerCase()}`;
+        if (alpha > beta) {
+          return -1;
+        }
+        if (alpha < beta) {
+          return 1;
+        }
+        return 0;
+      });
+      setFiltered(newArray);
+      setNameOrder("asc");
+    }
+
     console.log(filtered);
   }
 
@@ -71,17 +103,7 @@ function Search() {
 
   const handleTableHeaderClick = (event) => {
     console.log("table header click", event.target);
-    filtered.sort((a, b) => {
-      const aName = `${a.name.first.toLowerCase()} ${a.name.last.toLowerCase()}`;
-      const bName = `${b.name.first.toLowerCase()} ${b.name.last.toLowerCase()}`;
-      if (aName < bName) {
-        return -1;
-      }
-      if (aName < bName) {
-        return 1;
-      }
-      return 0;
-    });
+    sortEmployees();
   };
 
   return (
