@@ -10,8 +10,8 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <Navbar />
       <div className="container col-md-12">
+        <Navbar />
         <Wrapper>
           <Route exact path="/" component={About} />
           <Route exact path="/about" component={About} />
