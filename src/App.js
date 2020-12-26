@@ -10,12 +10,11 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div className="container col-md-12">
+      <div>
         <Navbar />
         <Wrapper>
-          <Route exact path="/" component={About} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/search" component={Search} />
+          <Route exact path={["/search", "/"]} component={Search} />
         </Wrapper>
         <Footer />
       </div>
