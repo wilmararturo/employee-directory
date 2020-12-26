@@ -1,3 +1,23 @@
 #employeeTableContainer {
   position: relative;
 }
+
+.topCaption {
+  caption-side: top;
+}
+
+.headerSortDown:after,
+.headerSortUp:after {
+  content: " ";
+  position: relative;
+  left: 10px;
+  border: 8px solid transparent;
+}
+.headerSortDown:after {
+  top: 10px;
+  border-top-color: #ffffff;
+}
+.headerSortUp:after {
+  bottom: 15px;
+  border-bottom-color: #ffffff;
+}

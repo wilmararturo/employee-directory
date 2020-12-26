@@ -3,12 +3,17 @@ import React from "react";
 function Table({ employeeList, onClick }) {
   return (
     <div className="table-responsive-md" id="employeeTableContainer">
-      <table className="table table-striped">
-        <caption>List of users</caption>
+      <table className="table table-hover table-striped">
+        <caption className="topCaption">Click the Name header to sort</caption>
         <thead className="thead-dark">
           <tr>
             <th scope="col">Image</th>
-            <th scope="col" onClick={onClick} data-value="name">
+            <th
+              scope="col"
+              className="headerSortDown"
+              onClick={onClick}
+              data-value="name"
+            >
               Name
             </th>
             <th scope="col">Phone</th>
