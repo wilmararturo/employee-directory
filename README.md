@@ -9,7 +9,7 @@
 
 ---
 
-An employee directory?
+An employee directory built using ReactJS.
 
 ## Table of Contents
 
@@ -25,7 +25,9 @@ An employee directory?
 
 ---
 
-Navigate to [employee-directory](https://stark-lowlands-32632.herokuapp.com/).
+- Navigate to [employee-directory](https://wilmararturo.github.io/employee-directory/).
+- Type in the search box to find users by name.
+- Click the "Name" column header to sort the employee list at any time.
 
 ## Tests
 
