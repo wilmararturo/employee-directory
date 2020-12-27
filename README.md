@@ -19,7 +19,7 @@ An employee directory built using ReactJS.
 - [Contributing](#contributing)
 - [License](#license)
 
-![preview]()
+![preview](./employeeDirectory.gif)
 
 ## Usage
 
